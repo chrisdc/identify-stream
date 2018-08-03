@@ -1,0 +1,26 @@
+{
+  "name": "validate-file",
+  "version": "1.0.0",
+  "description": "file signature validation for buffers and streams",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/chrisdc/validate-file.git"
+  },
+  "keywords": [
+    "identify",
+    "signature",
+    "nodejs",
+    "stream"
+  ],
+  "author": "Christopher Crouch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/chrisdc/videntify-stream/issues"
+  },
+  "homepage": "https://gitlab.com/chrisdc/videntify-stream#README"
+}
