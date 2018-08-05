@@ -4,7 +4,7 @@
   "description": "file signature validation for buffers and streams",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests",
+    "test": "mocha",
     "lint": "eslint ."
   },
   "repository": {
@@ -22,5 +22,10 @@
   "bugs": {
     "url": "https://gitlab.com/chrisdc/videntify-stream/issues"
   },
-  "homepage": "https://gitlab.com/chrisdc/videntify-stream#README"
+  "homepage": "https://gitlab.com/chrisdc/videntify-stream#README",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^5.2.0",
+    "mocha": "^5.2.0"
+  }
 }
