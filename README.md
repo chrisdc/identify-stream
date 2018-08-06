@@ -10,5 +10,7 @@ identifyStream.on('identity', function(type) {
 
 ## Options
 
-Standard stream options
-customFormats
+customFormats - object
+
+* customFormats <object> Default: null
+* highWaterMark <integer> Default: 16384
