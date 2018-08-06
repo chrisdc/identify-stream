@@ -1,0 +1,68 @@
+{
+  "image/jpeg": [
+    {
+      "buffer": "ffd8ff",
+      "offset": 0
+    }
+  ],
+  "image/png": [
+    {
+      "buffer": "89504e470d0a1a0a",
+      "offset": 0
+    }
+  ],
+  "image/gif": [
+    {
+      "buffer": "474946383761",
+      "offset": 0
+    },
+    {
+      "buffer": "474946383961",
+      "offset": 0
+    }
+  ],
+  "image/tiff": [
+    {
+      "buffer": "49492a00",
+      "offset": 0
+    },
+    {
+      "buffer": "4d4d002a",
+      "offset": 0
+    }
+  ],
+  "mp3": [
+    {
+      "buffer": "fffb",
+      "offset": 0
+    },
+    {
+      "buffer": "494433",
+      "offset": 0
+    }
+  ],
+  "flac": [
+    {
+      "buffer": "664c6143",
+      "offset": 0
+    }
+  ],
+  "m4a": [
+    {
+      "buffer": "667479704d3441",
+      "offset": 8
+    }
+  ],
+  "ogg": [
+    {
+      "buffer": "4f676753",
+      "offset": 0
+    }
+  ],
+  "wav": [
+    {
+      "buffer": "52494646",
+      "offset": 0
+    }
+  ]
+}
