@@ -1,0 +1,240 @@
+[
+  {
+    "extension": "bmp",
+    "mime": "image/bmp",
+    "signatures": [
+      {
+        "buffer": "424D",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "bz2",
+    "mime": "application/bzip2",
+    "signatures": [
+      {
+        "buffer": "425a68",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "exe",
+    "mime": "application/octet-stream",
+    "signatures": [
+      {
+        "buffer": "4d5a",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "flac",
+    "mime": "audio/flac",
+    "signatures": [
+      {
+        "buffer": "664c6143",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "gif",
+    "mime": "image/gif",
+    "signatures": [
+      {
+        "version": "87a",
+        "buffer": "474946383761",
+        "offset": 0
+      },
+      {
+        "version": "89a",
+        "buffer": "474946383961",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "gz",
+    "mime": "application/gzip",
+    "signatures": [
+      {
+        "buffer": "1f8b08",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "ico",
+    "mime": "image/ico",
+    "signatures": [
+      {
+        "buffer": "00000100",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "jpg",
+    "mime": "image/jpeg",
+    "signatures": [
+      {
+        "version": "Standard",
+        "buffer": "ffd8ffe0",
+        "offset": 0
+      },
+      {
+        "version": "EXIF",
+        "buffer": "ffd8ffe1",
+        "offset": 0
+      },
+      {
+        "version": "SPIFF",
+        "buffer": "ffd8ffe8",
+        "offset": 0
+      }
+      ]
+  },
+  {
+    "extension": "jpf",
+    "mime": "image/jpx",
+    "signatures": [
+      {
+        "buffer": "0000000c6a502020",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "m4a"
+  },
+  {
+    "extension": "mp3",
+    "mime": "audio/mpeg",
+    "signatures": [
+      {
+        "version": "ID3v1",
+        "buffer": "fffb",
+        "offset": 0
+      },
+      {
+        "version": "ID3v2",
+        "buffer": "494433",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "mp4"
+  },
+  {
+    "extension": "ogg",
+    "mime": "audio/ogg",
+    "signatures": [
+      {
+        "buffer": "4f676753",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "pdf",
+    "mime": "application/pdf",
+    "signatures": [
+      {
+        "buffer": "25504446",
+        "offet": 0
+      }
+    ]
+  },
+  {
+    "extension": "png",
+    "mime": "image/png",
+    "signatures": [
+      {
+        "buffer": "89504e470d0a1a0a",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "psd",
+    "mime": "image/psd",
+    "signatures": [
+      {
+        "buffer": "38425053",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "rtf"
+  },
+  {
+    "extension": "tif",
+    "sigs": [
+      {
+        "version": "little endian",
+        "buffer": "49492a00",
+        "offset": 0
+      },
+      {
+        "version": "big endian",
+        "buffer": "4d4d002a",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "wav",
+    "mime": "audio/wav",
+    "signatures": [
+      {
+        "buffer": "52494646xxxxxxxx57415645666d7420",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "webm",
+    "mime": "video/webm",
+    "signatures": [
+      {
+        "buffer": "1a45dfa3",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "webp",
+    "mime": "image/webp",
+    "signatures": [
+      {
+        "buffer": "52494646xxxxxxxx57454250",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "zip",
+    "mime": "application/zip",
+    "signatures": [
+      {
+        "version": "Standard",
+        "buffer": "504b0304",
+        "offset": 0
+      },
+      {
+        "version": "Empty",
+        "buffer": "504b0506",
+        "offset": 0
+      },
+      {
+        "version": "Spanning",
+        "buffer": "504b0708",
+        "offset": 0
+      }
+    ]
+  }
+]
