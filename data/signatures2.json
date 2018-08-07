@@ -1,5 +1,15 @@
 [
   {
+    "extension": "avi",
+    "mime": "video/avi",
+    "signatures": [
+      {
+        "buffer": "52494646????????41564920",
+        "offset": 0
+      }
+    ]
+  },
+  {
     "extension": "bmp",
     "mime": "image/bmp",
     "signatures": [
@@ -107,7 +117,14 @@
     ]
   },
   {
-    "extension": "m4a"
+    "extension": "m4a",
+    "mime": "audio/m4a",
+    "signatures": [
+      {
+        "buffer": "667479704d3441",
+        "offset": 8
+      }
+    ]
   },
   {
     "extension": "mp3",
@@ -126,7 +143,25 @@
     ]
   },
   {
-    "extension": "mp4"
+    "extension": "mp4",
+    "mime": "video/mp4",
+    "signatures": [
+      {
+        "version": "isom",
+        "buffer": "6674797069736f6d",
+        "offset": 8
+      },
+      {
+        "version": "msnv",
+        "buffer": "667479704d534e56",
+        "offset": 8
+      },
+      {
+        "version": "mmp4",
+        "buffer": "667479706d6d7034",
+        "offset": 8
+      }
+    ]
   },
   {
     "extension": "ogg",
@@ -169,7 +204,14 @@
     ]
   },
   {
-    "extension": "rtf"
+    "extension": "rtf",
+    "mime": "application/rtf",
+    "signatures": [
+      {
+        "buffer": "7b5c72746631",
+        "offset": 0
+      }
+    ]
   },
   {
     "extension": "tif",
