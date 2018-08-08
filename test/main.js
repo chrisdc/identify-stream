@@ -4,57 +4,48 @@ const fs = require('fs');
 var chai = require('chai');
 var expect = chai.expect;
 var IdentifyStream = require('../index.js');
-var fixtures;
+//var fixtures;
 
 describe('identify-stream', function() {
-  before(function(done) {
+  /*before(function(done) {
     fs.readdir('./test/fixtures', function(err, files) {
       fixtures = files;
     });
 
     done();
-  });
+  });*/
 
   it('Should load.', function() {
     expect(typeof IdentifyStream).to.equal('function');
-    //done();
   });
 
   describe('Identify Types', function() {
-    var inputStream,
-        outputStream,
-        indentifyStream;
+    var indentifyStream;
 
-    beforeEach() {
-      var indentifyStream = new IdentifyStream();
-      var inputStream = fs.createReadStream('./test/fixtures/fixture.jpg');
-      var outputStream = fs.createWriteStream('output.flac');
-    }
+    beforeEach(function() {
+      indentifyStream = new IdentifyStream();
+    });
 
     it('Should identify a jpg.', function(done) {
-      var indentifyStream = new IdentifyStream();
       var inputStream = fs.createReadStream('./test/fixtures/fixture.jpg');
-      var outputStream = fs.createWriteStream('output.flac');
 
       indentifyStream.on('identified', (type) => {
         expect(type).to.equal('jpeg');
         done();
       });
 
-      inputStream.pipe(indentifyStream).pipe(outputStream);
+      inputStream.pipe(indentifyStream);
     });
 
     it('Should identify a gif.', function(done) {
-      var indentifyStream = new IdentifyStream();
-      var inputStream = fs.createReadStream('./test/fixtures/fixture.gif');
-      var outputStream = fs.createWriteStream('output.flac');
+      var inputStream = fs.createReadStream('./test/fixtures/fixture-87a.gif');
 
       indentifyStream.on('identified', (type) => {
         expect(type).to.equal('gif');
         done();
       });
 
-      inputStream.pipe(indentifyStream).pipe(outputStream);
+      inputStream.pipe(indentifyStream);
     });
   });
 });
