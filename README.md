@@ -28,6 +28,8 @@ customFormats - object
 * jpg
 * jpf
 * m4a
+* mp4
+* mov
 * mp3
 * mp4
 * ogg
@@ -40,3 +42,5 @@ customFormats - object
 * webm
 * webp
 * zip
+
+jpg, mp4,
