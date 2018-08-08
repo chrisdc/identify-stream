@@ -1,5 +1,5 @@
 const { Transform } = require('stream');
-const signatures = require('./data/signatures');
+const formats = require('./data/signatures3');
 
 class IndentifyStream extends Transform {
   constructor(options = {}) {
@@ -9,19 +9,16 @@ class IndentifyStream extends Transform {
 
     // Merge custom formats into the list
     this.max = 262;
-    if (options.signatures) {
-      this.signatures = Object.assign(signatures, options.signatures);
-
-      // Do we need to increase the sample size?
-      for (var type in signatures) {
-        for (var i = 0; i < signatures[type].length; i++) {
-          let entry = signatures[type][i];
+    if (options.formats) {
+      for (var i = 0; i < options.formats.length; i++) {
+        for (var j = 0; j < options.formats[i].signatures.length; j++) {
+          let entry = formats[i].signatures[j];
           this.max = Math.max(entry.offset + entry.buffer.length, this.max);
         }
       }
-    } else {
-      this.signatures = signatures;
     }
+
+    this.formats = Object.assign(formats, options.formats || {});
 
     this.sample = '';
     this.position = 0;
@@ -39,17 +36,22 @@ class IndentifyStream extends Transform {
     this.sample = this.sample + data;
 
     if (this.sample.length >= this.max) {
+      this.emit('identified', this.check() || 'unknown');
+    }
+    /*if (this.sample.length >= this.max) {
       // Look for matches
       this.complete = true;
 
-      for (var type in signatures) {
-        for (var i = 0; i < signatures[type].length; i++) {
-          let entry = signatures[type][i];
+      for (var i = 0; i < formats.length; i++) {
+        for (var j = 0; j < formats[i].signatures.length; j++) {
+          let entry = formats[i].signatures[j];
           let sample = this.sample.slice(entry.offset, entry.offset + entry.buffer.length);
+
+          //console.log(formats[i], formats[i].signatures[j].version);
 
           if (sample === entry.buffer) {
             // We have a match
-            this.emit('identified', type);
+            this.emit('identified', formats[i].mime);
             return cb(null, chunk);
           }
         }
@@ -57,9 +59,37 @@ class IndentifyStream extends Transform {
 
       // No matches found
       this.emit('identified', 'unknown');
-    }
+    }*/
 
     return cb(null, chunk);
+  }
+
+  _flush(cb) {
+    if (this.complete === false) {
+      this.emit('identified', this.check() || 'unknown');
+    }
+    cb();
+  }
+
+  check() {
+    this.complete = true;
+
+    for (var i = 0; i < formats.length; i++) {
+      for (var j = 0; j < formats[i].signatures.length; j++) {
+        let entry = formats[i].signatures[j];
+        let sample = this.sample.slice(entry.offset, entry.offset + entry.buffer.length);
+
+        if (sample === entry.buffer) {
+          // We have a match
+          return formats[i].mime;
+          /*this.emit('identified', formats[i].mime);
+          return;*/
+          //return cb(null, chunk);
+        }
+      }
+    }
+
+    return;
   }
 }
 
