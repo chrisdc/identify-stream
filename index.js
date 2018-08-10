@@ -1,5 +1,6 @@
+'use strict';
 const { Transform } = require('stream');
-const formats = require('./data/signatures3');
+const formats = require('./data/formats');
 
 class IndentifyStream extends Transform {
   constructor(options = {}) {
@@ -22,7 +23,6 @@ class IndentifyStream extends Transform {
 
     this.sample = '';
     this.position = 0;
-    this.max = 262;
     this.complete = false;
   }
 
@@ -36,60 +36,57 @@ class IndentifyStream extends Transform {
     this.sample = this.sample + data;
 
     if (this.sample.length >= this.max) {
-      this.emit('identified', this.check() || 'unknown');
+      this.emit('identified', this._findMatch());
     }
-    /*if (this.sample.length >= this.max) {
-      // Look for matches
-      this.complete = true;
-
-      for (var i = 0; i < formats.length; i++) {
-        for (var j = 0; j < formats[i].signatures.length; j++) {
-          let entry = formats[i].signatures[j];
-          let sample = this.sample.slice(entry.offset, entry.offset + entry.buffer.length);
-
-          //console.log(formats[i], formats[i].signatures[j].version);
-
-          if (sample === entry.buffer) {
-            // We have a match
-            this.emit('identified', formats[i].mime);
-            return cb(null, chunk);
-          }
-        }
-      }
-
-      // No matches found
-      this.emit('identified', 'unknown');
-    }*/
 
     return cb(null, chunk);
   }
 
   _flush(cb) {
     if (this.complete === false) {
-      this.emit('identified', this.check() || 'unknown');
+      this.emit('identified', this._findMatch());
     }
     cb();
   }
 
-  check() {
+  _findMatch() {
     this.complete = true;
 
     for (var i = 0; i < formats.length; i++) {
-      for (var j = 0; j < formats[i].signatures.length; j++) {
-        let entry = formats[i].signatures[j];
-        let sample = this.sample.slice(entry.offset, entry.offset + entry.buffer.length);
-
-        if (sample === entry.buffer) {
-          // We have a match
+      if (formats[i].subtypes) {
+        for (var j = 0; j < formats[i].subtypes.length; j++) {
+          if (this._checkSignature(formats[i].subtypes[j])) {
+            return formats[i].mime;
+          }
+        }
+      } else {
+        if (this._checkSignature(formats[i])) {
           return formats[i].mime;
-          /*this.emit('identified', formats[i].mime);
-          return;*/
-          //return cb(null, chunk);
         }
       }
     }
 
-    return;
+    return 'unknown';
+  }
+
+  _checkSignature(format) {
+    var sig = format.signature;
+
+    if (!Array.isArray(sig)) {
+      sig = [sig];
+    }
+
+    for (var i = 0; i < sig.length; i++) {
+      let sample = this.sample.slice(
+        sig[i].offset, sig[i].offset + sig[i].value.length
+      );
+
+      if (sample !== sig[i].value) {
+        return false;
+      }
+    }
+
+    return true;
   }
 }
 
