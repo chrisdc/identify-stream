@@ -1,0 +1,370 @@
+[
+  {
+    "extension": "7z",
+    "mime": "application/x-7z-compressed",
+    "signature": {
+      "value": "377abcaf271c",
+      "offset": 0
+    }
+  },
+  {
+    "extension": "avi",
+    "mime": "video/avi",
+    "signature": [
+      {
+        "value": "52494646",
+        "offset": 0
+      },
+      {
+        "value": "41564920",
+        "offset": 16
+      }
+    ]
+  },
+  {
+    "extension": "bmp",
+    "mime": "image/bmp",
+    "signature": {
+      "value": "424d",
+      "offset": 0
+    }
+  },
+  {
+    "extension": "bz2",
+    "mime": "application/bzip2",
+    "signature": {
+      "value": "425a68",
+      "offset": 0
+    }
+  },
+  {
+    "extension": "exe",
+    "mime": "application/octet-stream",
+    "signature": {
+      "value": "4d5a",
+      "offset": 0
+    }
+  },
+  {
+    "extension": "flac",
+    "mime": "audio/flac",
+    "signature": {
+      "value": "664c6143",
+      "offset": 0
+    }
+  },
+  {
+    "extension": "gif",
+    "mime": "image/gif",
+    "subtypes": [
+      {
+        "type": "87a",
+        "signature": {
+          "value": "474946383761",
+          "offset": 0
+        }
+      },
+      {
+        "type": "89a",
+        "signature": {
+          "value": "474946383961",
+          "offset": 0
+        }
+      }
+    ]
+  },
+  {
+    "extension": "gz",
+    "mime": "application/gzip",
+    "signature": [
+      {
+        "value": "1f8b08",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "ico",
+    "mime": "image/ico",
+    "signature": [
+      {
+        "value": "00000100",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "jpg",
+    "mime": "image/jpeg",
+    "subtypes": [
+      {
+        "type": "standard",
+        "signature": {
+          "value": "ffd8ffe0",
+          "offset": 0
+        }
+      },
+      {
+        "type": "exif",
+        "signature": {
+          "value": "ffd8ffe1",
+          "offset": 0
+        }
+      },
+      {
+        "type": "SPIFF",
+        "signature": {
+          "value": "ffd8ffe8",
+          "offset": 0
+        }
+      }
+    ]
+  },
+  {
+    "extension": "jpf",
+    "mime": "image/jpx",
+    "signature": {
+      "value": "0000000c6a502020",
+      "offset": 0
+    }
+  },
+  {
+    "extension": "m4a",
+    "mime": "audio/m4a",
+    "signature": [
+      {
+        "value": "667479704d3441",
+        "offset": 8
+      }
+    ]
+  },
+  {
+    "extension": "mov",
+    "mime": "video/quicktime",
+    "subtypes": [
+      {
+        "type": "moov",
+        "signature": {
+          "value": "6d6f6f76",
+          "offset": 8
+        }
+      },
+      {
+        "type": "free",
+        "signature": {
+          "value": "66726565",
+          "offset": 8
+        }
+      },
+      {
+        "type": "ftypqt",
+        "signature": {
+          "value": "6674797071742020",
+          "offset": 8
+        }
+      },
+      {
+        "type": "mdat",
+        "signature": {
+          "value": "6d646174",
+          "offset": 8
+        }
+      },
+      {
+        "type": "pnot",
+        "signature": {
+          "value": "706E6F74",
+          "offset": 8
+        }
+      },
+      {
+        "type": "skip",
+        "signature": {
+          "value": "736B6970",
+          "offset": 8
+        }
+      },
+      {
+        "type": "wide",
+        "signature": {
+          "value": "77696465",
+          "offset": 8
+        }
+      }
+    ]
+  },
+  {
+    "extension": "mp3",
+    "mime": "audio/mpeg",
+    "subtypes": [
+      {
+        "type": "ID3v1",
+        "signature": {
+          "value": "fffb",
+          "offset": 0
+        }
+      },
+      {
+        "type": "ID3v2",
+        "signature": {
+          "value": "494433",
+          "offset": 0
+        }
+      }
+    ]
+  },
+  {
+    "extension": "mp4",
+    "mime": "video/mp4",
+    "subtypes": [
+      {
+        "type": "isom",
+        "signature": {
+          "value": "6674797069736f6d",
+          "offset": 8
+        }
+      },
+      {
+        "type": "msnv",
+        "signature": {
+          "value": "667479704d534e56",
+          "offset": 8
+        }
+      },
+      {
+        "type": "mmp4",
+        "signature": {
+          "value": "667479706d6d7034",
+          "offset": 8
+        }
+      }
+    ]
+  },
+  {
+    "extension": "ogg",
+    "mime": "audio/ogg",
+    "signature": {
+      "value": "4f676753",
+      "offset": 0
+    }
+  },
+  {
+    "extension": "pdf",
+    "mime": "application/pdf",
+    "signature": {
+      "value": "25504446",
+      "offset": 0
+    }
+  },
+  {
+    "extension": "png",
+    "mime": "image/png",
+    "signature": {
+      "value": "89504e470d0a1a0a",
+      "offset": 0
+    }
+  },
+  {
+    "extension": "psd",
+    "mime": "image/psd",
+    "signature": {
+      "value": "38425053",
+      "offset": 0
+    }
+  },
+  {
+    "extension": "rtf",
+    "mime": "application/rtf",
+    "signature": {
+      "value": "7b5c72746631",
+      "offset": 0
+    }
+  },
+  {
+    "extension": "tif",
+    "mime": "image/tiff",
+    "subtypes": [
+      {
+        "type": "little endian",
+        "signature": {
+          "value": "49492a00",
+          "offset": 0
+        }
+      },
+      {
+        "type": "big endian",
+        "signature": {
+          "value": "4d4d002a",
+          "offset": 0
+        }
+      }
+    ]
+  },
+  {
+    "extension": "wav",
+    "mime": "audio/wav",
+    "signature": {
+      "value": "57415645666d7420",
+      "offset": 16
+    }
+  },
+  {
+    "extension": "webm",
+    "mime": "video/webm",
+    "signature": {
+      "value": "1a45dfa3",
+      "offset": 0
+    }
+  },
+  {
+    "extension": "webp",
+    "mime": "image/webp",
+    "signature": [
+      {
+        "value": "52494646",
+        "offset": 0
+      },
+      {
+        "value": "57454250",
+        "offset": 16
+      }
+    ]
+  },
+  {
+    "extension": "xz",
+    "mime": "application/x-xz",
+    "signature": [
+      {
+        "value": "fd377a585a0000",
+        "offset": 0
+      }
+    ]
+  },
+  {
+    "extension": "zip",
+    "mime": "application/zip",
+    "subtypes": [
+      {
+        "type": "standard",
+        "signature": {
+          "value": "504b0304",
+          "offset": 0
+        }
+      },
+      {
+        "type": "empty",
+        "signature": {
+          "value": "504b0506",
+          "offset": 0
+        }
+      },
+      {
+        "type": "spanning",
+        "signature": {
+          "value": "504b0708",
+          "offset": 0
+        }
+      }
+    ]
+  }
+]
