@@ -10,11 +10,14 @@ class IndentifyStream extends Transform {
 
     // Merge custom formats into the list
     this.max = 262;
+    //console.log(options.formats);
     if (options.formats) {
       for (var i = 0; i < options.formats.length; i++) {
-        for (var j = 0; j < options.formats[i].signatures.length; j++) {
-          let entry = formats[i].signatures[j];
-          this.max = Math.max(entry.offset + entry.buffer.length, this.max);
+        console.log(options.formats[i]);
+        for (var j = 0; j < options.formats[i].signature.length; j++) {
+          console.log(options.formats[i].signature[j]);
+          let entry = options.formats[i].signature[j];
+          this.max = Math.max(entry.offset + entry.value.length, this.max);
         }
       }
     }
