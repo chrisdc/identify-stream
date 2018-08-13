@@ -1,4 +1,5 @@
 'use strict';
+
 const { Transform } = require('stream');
 const formats = require('./data/formats');
 
@@ -10,22 +11,19 @@ class IndentifyStream extends Transform {
 
     // Merge custom formats into the list
     this.max = 262;
-    //console.log(options.formats);
     if (options.formats) {
       for (var i = 0; i < options.formats.length; i++) {
-        console.log(options.formats[i]);
         for (var j = 0; j < options.formats[i].signature.length; j++) {
-          console.log(options.formats[i].signature[j]);
           let entry = options.formats[i].signature[j];
           this.max = Math.max(entry.offset + entry.value.length, this.max);
         }
       }
     }
 
-    this.formats = Object.assign(formats, options.formats || {});
+    this.formats = formats.concat(options.formats || []);
 
     this.sample = '';
-    this.position = 0;
+    //this.position = 0;
     this.complete = false;
   }
 
@@ -46,6 +44,10 @@ class IndentifyStream extends Transform {
   }
 
   _flush(cb) {
+    if (this.sample.length === 0) {
+      return cb(new Error('gg'));
+    }
+
     if (this.complete === false) {
       this.emit('identified', this._findMatch());
     }
@@ -55,16 +57,16 @@ class IndentifyStream extends Transform {
   _findMatch() {
     this.complete = true;
 
-    for (var i = 0; i < formats.length; i++) {
-      if (formats[i].subtypes) {
-        for (var j = 0; j < formats[i].subtypes.length; j++) {
-          if (this._checkSignature(formats[i].subtypes[j])) {
-            return formats[i].mime;
+    for (var i = 0; i < this.formats.length; i++) {
+      if (this.formats[i].subtypes) {
+        for (var j = 0; j < this.formats[i].subtypes.length; j++) {
+          if (this._checkSignature(this.formats[i].subtypes[j])) {
+            return this.formats[i].mime;
           }
         }
       } else {
-        if (this._checkSignature(formats[i])) {
-          return formats[i].mime;
+        if (this._checkSignature(this.formats[i])) {
+          return this.formats[i].mime;
         }
       }
     }
@@ -83,6 +85,7 @@ class IndentifyStream extends Transform {
       let sample = this.sample.slice(
         sig[i].offset, sig[i].offset + sig[i].value.length
       );
+
 
       if (sample !== sig[i].value) {
         return false;
