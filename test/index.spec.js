@@ -205,14 +205,11 @@ describe('File types', function() {
   });
 
   it('Should emit an error when file is empty.', function(done) {
-    testFile('./test/fixtures/fixture.empty', 'application/x-7z-compressed', done);
-
     const inputStream = fs.createReadStream('./test/fixtures/fixture.empty');
     const identifyStream = new IdentifyStream();
     const writableStreamBuffer = new WritableStreamBuffer();
 
     identifyStream.on('error', function(err) {
-      //expect(1).to.equal(1);
       expect(err).to.be.an.instanceof(Error);
       done();
     });
