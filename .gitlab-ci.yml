@@ -1,6 +1,4 @@
-before_script:
-  - apt-get update -qq && apt-get install -y -qq nodejs
-  - npm install
+image: node:10.8.0-stretch
 
 cache:
   paths:
