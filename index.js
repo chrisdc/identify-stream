@@ -2,6 +2,7 @@
 
 const { Transform } = require('stream');
 const formats = require('./data/formats');
+const findMax = require('./lib/find-max');
 
 class IndentifyStream extends Transform {
   constructor(options = {}) {
@@ -9,15 +10,13 @@ class IndentifyStream extends Transform {
       highWaterMark: options.highWaterMark || 16384
     });
 
+    //var customFormats = [];
+
     // Merge custom formats into the list
     this.max = 262;
+
     if (options.formats) {
-      for (var i = 0; i < options.formats.length; i++) {
-        for (var j = 0; j < options.formats[i].signature.length; j++) {
-          let entry = options.formats[i].signature[j];
-          this.max = Math.max(entry.offset + entry.value.length, this.max);
-        }
-      }
+      this.max = findMax(options.formats);
     }
 
     this.formats = formats.concat(options.formats || []);
