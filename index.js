@@ -45,7 +45,7 @@ class IndentifyStream extends Transform {
 
   _flush(cb) {
     if (this.sample.length === 0) {
-      return cb(new Error('gg'));
+      return cb(new Error('Streamed file is empty'));
     }
 
     if (this.complete === false) {
