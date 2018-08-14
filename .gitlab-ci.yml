@@ -9,9 +9,9 @@ cache:
 
 lint:
   script:
-    - npm run test
+    - npm run lint
 
 test:
   script:
-    - npm run lint
+    - npm run test
 
