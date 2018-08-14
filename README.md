@@ -1,12 +1,20 @@
 ## API
 
-```js
-var identifyStream = new IdentifyStream([options]);
+### Basic Example
 
-identifyStream.on('identity', function(type) {
-  console.log(type);
+```js
+const identifyStream = new IdentifyStream();
+const inputStream = fs.createReadStream('./input.png');
+const outputStream = fs.createWriteStream('./output.png');
+
+inputStream.pipe(identifyStream).pipe(outputStream);
+
+identifyStream.on('identity', (mimeType) => {
+  console.log(mimeType); // 'image/png'
 });
 ```
+
+### Custom Format Example
 
 ## Options
 
@@ -42,5 +50,3 @@ customFormats - object
 * webm
 * webp
 * zip
-
-jpg, mp4,
