@@ -4,7 +4,7 @@
   "description": "file signature validation for buffers and streams",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha",
+    "test": "nyc --reporter=text --reporter=text-summary mocha",
     "lint": "eslint ."
   },
   "repository": {
