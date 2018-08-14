@@ -15,3 +15,6 @@ test:
   script:
     - npm run test
 
+audit:
+  script:
+    - npm audit
