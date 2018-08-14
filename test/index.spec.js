@@ -1,4 +1,5 @@
 /* eslint-env node, mocha */
+'use strict';
 
 const { expect } = require('chai');
 const IdentifyStream = require('../index.js');
@@ -284,6 +285,34 @@ describe('Custom file types', () => {
           }]
         }
       ]
+    }, done);
+  });
+
+  it('Should allow custom signatures outside of an array', (done) => {
+    testFile('./test/fixtures/fixture.pseudo', 'application/x-custom', {
+      formats: [
+        {
+          extension: 'pseudo',
+          mime: 'application/x-custom',
+          signature: {
+            value: '7fa92c',
+            offset: 131104
+          }
+        }
+      ]
+    }, done);
+  });
+
+  it('Should allow custom formats outside of an array', (done) => {
+    testFile('./test/fixtures/fixture.pseudo', 'application/x-custom', {
+      formats: {
+        extension: 'pseudo',
+        mime: 'application/x-custom',
+        signature: [{
+          value: '7fa92c',
+          offset: 131104
+        }]
+      }
     }, done);
   });
 });
