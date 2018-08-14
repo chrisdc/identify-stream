@@ -8,13 +8,23 @@ cache:
     - node_modules/
 
 lint:
+  except:
+    - schedules
   script:
     - npm run lint
 
 test:
+  except:
+    - schedules
   script:
     - npm run test
 
 audit:
   script:
     - npm audit
+
+outdated:
+  only:
+    - schedules
+  script:
+    - npm outdated
