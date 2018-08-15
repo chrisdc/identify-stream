@@ -1,4 +1,6 @@
 /* eslint-env node, mocha */
+'use strict';
+
 const IdentifyStream = require('../../lib/index.js');
 const fs = require('fs');
 const { expect } = require('chai');
