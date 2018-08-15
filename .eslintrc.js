@@ -76,6 +76,10 @@ module.exports = {
       "error", {
         "int32Hint": false
       }
+    ],
+    "strict": [
+      "error",
+      "global"
     ]
   }
 };
