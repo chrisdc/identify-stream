@@ -1,5 +1,5 @@
 {
-  "name": "validate-file",
+  "name": "identify-stream",
   "version": "1.0.0",
   "description": "file signature validation for buffers and streams",
   "main": "/lib/index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/chrisdc/validate-file.git"
+    "url": "git+ssh://git@gitlab.com:chrisdc/identify-stream.git"
   },
   "keywords": [
     "identify",
@@ -31,7 +31,7 @@
     "stream-buffers": "^3.0.2"
   },
   "files": [
-    "/index.js",
+    "/lib",
     "/data"
   ]
 }
