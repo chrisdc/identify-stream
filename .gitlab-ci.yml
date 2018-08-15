@@ -22,11 +22,11 @@ test:
 audit:
   script:
     - npm audit
-  allow-failure: true
+  allow_failure: true
 
 outdated:
   only:
     - schedules
   script:
     - npm outdated
-  allow-failure: true
+  allow_failure: true
