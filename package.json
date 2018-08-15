@@ -2,7 +2,7 @@
   "name": "validate-file",
   "version": "1.0.0",
   "description": "file signature validation for buffers and streams",
-  "main": "index.js",
+  "main": "/lib/index.js",
   "scripts": {
     "test": "nyc --reporter=text --reporter=text-summary mocha",
     "lint": "eslint ."

@@ -2,7 +2,7 @@
 'use strict';
 
 const { expect } = require('chai');
-const IdentifyStream = require('../index.js');
+const IdentifyStream = require('../lib/index.js');
 const { Readable } = require('stream');
 const fs = require('fs');
 const { WritableStreamBuffer } = require('stream-buffers');

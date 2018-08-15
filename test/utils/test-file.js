@@ -1,5 +1,5 @@
 /* eslint-env node, mocha */
-const IdentifyStream = require('../../index.js');
+const IdentifyStream = require('../../lib/index.js');
 const fs = require('fs');
 const { expect } = require('chai');
 const { WritableStreamBuffer } = require('stream-buffers');
