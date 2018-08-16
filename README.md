@@ -1,6 +1,12 @@
-## API
+# identify-stream
 
-### Basic Example
+## Install
+
+```
+$ npm install --save indentify-stream
+```
+
+## Usage
 
 ```js
 const identifyStream = new IdentifyStream();
@@ -14,17 +20,25 @@ identifyStream.on('identity', (mimeType) => {
 });
 ```
 
-### Custom Format Example
+### Usage With Custom Formats
 
-## Options
+## API
 
-customFormats - object
+new IdentityStream([option])
 
-* customFormats <object> Default: null
-* highWaterMark <integer> Default: 16384
+* `options` <Object>
+  * `customFormats` <Object> | <Object[]> Define any additional file formats you would like to search for.
+    * `extension` <string> The file formats's extension
+    * `mime` <string> The file formats's MIME type.
+    * `signature` <Object> | <Object[]> The file format's signature. If an array of objects are provided each signature will have to match.
+      * `value` <string> The signature to check for.
+      * `offset` <number> The offset of the signatue.
+    * `subtypes` <Object> | <Object[]> Define different types of the format.
+  * `highWaterMark` <number> Default: `16384`
 
 ## Supported File Types
 
+* 7z
 * avi
 * bmp
 * bz2
@@ -49,4 +63,9 @@ customFormats - object
 * wav
 * webm
 * webp
+* xz
 * zip
+
+## License
+
+ISC
