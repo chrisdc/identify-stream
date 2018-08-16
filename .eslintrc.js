@@ -80,6 +80,16 @@ module.exports = {
     "strict": [
       "error",
       "global"
+    ],
+    "valid-jsdoc": [
+      "error",
+      {
+        "prefer": {
+          "arg": "param",
+          "argument": "param",
+          "returns": "return"
+        }
+      }
     ]
   }
 };
