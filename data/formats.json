@@ -1,5 +1,6 @@
 [
   {
+    "name": "7-zip",
     "extension": "7z",
     "mime": "application/x-7z-compressed",
     "signature": {
@@ -8,6 +9,7 @@
     }
   },
   {
+    "name": "Audio Video Interleave",
     "extension": "avi",
     "mime": "video/avi",
     "signature": [
@@ -22,6 +24,7 @@
     ]
   },
   {
+    "name": "Bitmap Image File",
     "extension": "bmp",
     "mime": "image/bmp",
     "signature": {
@@ -30,6 +33,7 @@
     }
   },
   {
+    "name": "BZIP2",
     "extension": "bz2",
     "mime": "application/bzip2",
     "signature": {
@@ -38,6 +42,7 @@
     }
   },
   {
+    "name": "Executable",
     "extension": "exe",
     "mime": "application/octet-stream",
     "signature": {
@@ -46,6 +51,7 @@
     }
   },
   {
+    "name": "Free Lossless Audio Codec",
     "extension": "flac",
     "mime": "audio/flac",
     "signature": {
@@ -54,6 +60,7 @@
     }
   },
   {
+    "name": "Graphics Interchange Format",
     "extension": "gif",
     "mime": "image/gif",
     "subtypes": [
@@ -74,6 +81,7 @@
     ]
   },
   {
+    "name": "GZ",
     "extension": "gz",
     "mime": "application/gzip",
     "signature": [
@@ -84,6 +92,7 @@
     ]
   },
   {
+    "name": "Icon File",
     "extension": "ico",
     "mime": "image/ico",
     "signature": [
@@ -94,6 +103,7 @@
     ]
   },
   {
+    "name": "JPEG",
     "extension": "jpg",
     "mime": "image/jpeg",
     "subtypes": [
@@ -121,6 +131,7 @@
     ]
   },
   {
+    "name": "JPEG 2000",
     "extension": "jpf",
     "mime": "image/jpx",
     "signature": {
@@ -129,6 +140,7 @@
     }
   },
   {
+    "name": "MPEG 4 Audio",
     "extension": "m4a",
     "mime": "audio/m4a",
     "signature": [
@@ -139,6 +151,7 @@
     ]
   },
   {
+    "name": "QuickTime Movie",
     "extension": "mov",
     "mime": "video/quicktime",
     "subtypes": [
@@ -194,6 +207,7 @@
     ]
   },
   {
+    "name": "MPEG Audio Layer III",
     "extension": "mp3",
     "mime": "audio/mpeg",
     "subtypes": [
@@ -214,6 +228,7 @@
     ]
   },
   {
+    "name": "MPEG-4 Part 14",
     "extension": "mp4",
     "mime": "video/mp4",
     "subtypes": [
@@ -241,6 +256,7 @@
     ]
   },
   {
+    "name": "OGG",
     "extension": "ogg",
     "mime": "audio/ogg",
     "signature": {
@@ -249,6 +265,7 @@
     }
   },
   {
+    "name": "Portable Document Format",
     "extension": "pdf",
     "mime": "application/pdf",
     "signature": {
@@ -257,6 +274,7 @@
     }
   },
   {
+    "name": "Portable Network Graphics",
     "extension": "png",
     "mime": "image/png",
     "signature": {
@@ -265,6 +283,7 @@
     }
   },
   {
+    "name": "PhotoShop Document",
     "extension": "psd",
     "mime": "image/psd",
     "signature": {
@@ -273,6 +292,7 @@
     }
   },
   {
+    "name": "Rich Text Format",
     "extension": "rtf",
     "mime": "application/rtf",
     "signature": {
@@ -281,6 +301,7 @@
     }
   },
   {
+    "name": "Tagged Image File Format",
     "extension": "tif",
     "mime": "image/tiff",
     "subtypes": [
@@ -301,6 +322,7 @@
     ]
   },
   {
+    "name": "Waveform Audio File Format",
     "extension": "wav",
     "mime": "audio/wav",
     "signature": {
@@ -309,6 +331,7 @@
     }
   },
   {
+    "name": "WebM",
     "extension": "webm",
     "mime": "video/webm",
     "signature": {
@@ -317,6 +340,7 @@
     }
   },
   {
+    "name": "WebP",
     "extension": "webp",
     "mime": "image/webp",
     "signature": [
@@ -331,6 +355,7 @@
     ]
   },
   {
+    "name": "XZ",
     "extension": "xz",
     "mime": "application/x-xz",
     "signature": [
@@ -341,6 +366,7 @@
     ]
   },
   {
+    "name": "ZIP",
     "extension": "zip",
     "mime": "application/zip",
     "subtypes": [
