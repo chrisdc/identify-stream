@@ -61,14 +61,14 @@ describe('findSampleLength', () => {
       mime: 'application/x-custom',
       subtypes: [
         {
-          type: 'Type A',
+          name: 'Type A',
           signature: {
             value: '474946383761',
             offset: 500
           }
         },
         {
-          type: 'Type B',
+          name: 'Type B',
           signature: {
             value: '474946383961',
             offset: 200
@@ -86,14 +86,14 @@ describe('findSampleLength', () => {
       mime: 'application/x-custom',
       subtypes: [
         {
-          type: 'Type A',
+          name: 'Type A',
           signature: {
             value: '474946383761',
             offset: 0
           }
         },
         {
-          type: 'Type B',
+          name: 'Type B',
           signature: [
             {
               value: '474946383961',
@@ -140,14 +140,14 @@ describe('findSampleLength', () => {
         mime: 'application/x-custom',
         subtypes: [
           {
-            type: 'Type A',
+            name: 'Type A',
             signature: {
               value: '474946383761',
               offset: 500
             }
           },
           {
-            type: 'Type B',
+            name: 'Type B',
             signature: {
               value: '474946383961',
               offset: 200
@@ -160,14 +160,14 @@ describe('findSampleLength', () => {
         mime: 'application/x-custom',
         subtypes: [
           {
-            type: 'Type A',
+            name: 'Type A',
             signature: {
               value: '474946383761',
               offset: 0
             }
           },
           {
-            type: 'Type B',
+            name: 'Type B',
             signature: [
               {
                 value: '474946383961',

@@ -65,13 +65,13 @@ describe('IdentifyStream', () => {
       inputStream.pipe(identifyStream).pipe(writableStreamBuffer);
     });
 
-    it('Stops taking samples once identified', (done) => {
+    it('Stops taking samples once complete', (done) => {
       const identifyStream = new IdentifyStream();
       const inputStream = fs.createReadStream('./test/fixtures/fixture.pseudo');
       const writableStreamBuffer = new WritableStreamBuffer();
       var sampleLength;
 
-      identifyStream.on('identified', () => {
+      identifyStream.on('complete', () => {
         sampleLength = identifyStream.sample.length;
       });
 
@@ -300,14 +300,14 @@ describe('IdentifyStream', () => {
             mime: 'application/x-custom',
             subtypes: [
               {
-                type: 'subtype a',
+                name: 'subtype a',
                 signature: {
                   value: '7fa93c',
                   offset: 131104
                 }
               },
               {
-                type: 'subtype b',
+                name: 'subtype b',
                 value: '7fa92c',
                 signature: {
                   value: '7fa92c',
