@@ -34,7 +34,7 @@ const outputStream = fs.createWriteStream('./output.gig');
 inputStream.pipe(identifyStream).pipe(outputStream);
 
 identifyStream.on('complete', (mimeType) => {
-  console.log(result); // {extension: "gif", mime: "image/gif", subtype: "87a"}
+  console.log(result); // {name: "PNG Image", extension: "gif", mime: "image/gif", subtype: "87a"}
 });
 ```
 
@@ -55,7 +55,7 @@ const outputStream = fs.createWriteStream('./output.gig');
 inputStream.pipe(identifyStream).pipe(outputStream);
 
 identifyStream.on('complete', (mimeType) => {
-  console.log(result); // {extension: "gif", mime: "image/gif", subtype: "87a"}
+  console.log(result); // {name: "GIF Image", extension: "gif", mime: "image/gif", subtype: "87a"}
 });
 ```
 

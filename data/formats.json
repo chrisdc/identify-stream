@@ -1,6 +1,6 @@
 [
   {
-    "name": "7-zip",
+    "name": "7-zip Archive",
     "extension": "7z",
     "mime": "application/x-7z-compressed",
     "signature": {
@@ -9,7 +9,7 @@
     }
   },
   {
-    "name": "Audio Video Interleave",
+    "name": "AVI Video",
     "extension": "avi",
     "mime": "video/avi",
     "signature": [
@@ -24,7 +24,7 @@
     ]
   },
   {
-    "name": "Bitmap Image File",
+    "name": "BMP Image",
     "extension": "bmp",
     "mime": "image/bmp",
     "signature": {
@@ -33,7 +33,7 @@
     }
   },
   {
-    "name": "BZIP2",
+    "name": "BZIP2 Archive",
     "extension": "bz2",
     "mime": "application/bzip2",
     "signature": {
@@ -42,7 +42,7 @@
     }
   },
   {
-    "name": "Executable",
+    "name": "Executable File",
     "extension": "exe",
     "mime": "application/octet-stream",
     "signature": {
@@ -51,7 +51,7 @@
     }
   },
   {
-    "name": "Free Lossless Audio Codec",
+    "name": "FLAC Audio",
     "extension": "flac",
     "mime": "audio/flac",
     "signature": {
@@ -60,19 +60,19 @@
     }
   },
   {
-    "name": "Graphics Interchange Format",
+    "name": "GIF Image",
     "extension": "gif",
     "mime": "image/gif",
     "subtypes": [
       {
-        "type": "87a",
+        "name": "87a",
         "signature": {
           "value": "474946383761",
           "offset": 0
         }
       },
       {
-        "type": "89a",
+        "name": "89a",
         "signature": {
           "value": "474946383961",
           "offset": 0
@@ -81,7 +81,7 @@
     ]
   },
   {
-    "name": "GZ",
+    "name": "GZIP Archive",
     "extension": "gz",
     "mime": "application/gzip",
     "signature": [
@@ -103,26 +103,26 @@
     ]
   },
   {
-    "name": "JPEG",
+    "name": "JPEG Image",
     "extension": "jpg",
     "mime": "image/jpeg",
     "subtypes": [
       {
-        "type": "standard",
+        "name": "standard",
         "signature": {
           "value": "ffd8ffe0",
           "offset": 0
         }
       },
       {
-        "type": "exif",
+        "name": "exif",
         "signature": {
           "value": "ffd8ffe1",
           "offset": 0
         }
       },
       {
-        "type": "SPIFF",
+        "name": "SPIFF",
         "signature": {
           "value": "ffd8ffe8",
           "offset": 0
@@ -131,7 +131,7 @@
     ]
   },
   {
-    "name": "JPEG 2000",
+    "name": "JPEG 2000 Image",
     "extension": "jpf",
     "mime": "image/jpx",
     "signature": {
@@ -156,49 +156,49 @@
     "mime": "video/quicktime",
     "subtypes": [
       {
-        "type": "moov",
+        "name": "moov",
         "signature": {
           "value": "6d6f6f76",
           "offset": 8
         }
       },
       {
-        "type": "free",
+        "name": "free",
         "signature": {
           "value": "66726565",
           "offset": 8
         }
       },
       {
-        "type": "ftypqt",
+        "name": "ftypqt",
         "signature": {
           "value": "6674797071742020",
           "offset": 8
         }
       },
       {
-        "type": "mdat",
+        "name": "mdat",
         "signature": {
           "value": "6d646174",
           "offset": 8
         }
       },
       {
-        "type": "pnot",
+        "name": "pnot",
         "signature": {
           "value": "706E6F74",
           "offset": 8
         }
       },
       {
-        "type": "skip",
+        "name": "skip",
         "signature": {
           "value": "736B6970",
           "offset": 8
         }
       },
       {
-        "type": "wide",
+        "name": "wide",
         "signature": {
           "value": "77696465",
           "offset": 8
@@ -207,19 +207,19 @@
     ]
   },
   {
-    "name": "MPEG Audio Layer III",
+    "name": "MP3 Audio",
     "extension": "mp3",
     "mime": "audio/mpeg",
     "subtypes": [
       {
-        "type": "ID3v1",
+        "name": "ID3v1",
         "signature": {
           "value": "fffb",
           "offset": 0
         }
       },
       {
-        "type": "ID3v2",
+        "name": "ID3v2",
         "signature": {
           "value": "494433",
           "offset": 0
@@ -228,26 +228,26 @@
     ]
   },
   {
-    "name": "MPEG-4 Part 14",
+    "name": "MP4 Video",
     "extension": "mp4",
     "mime": "video/mp4",
     "subtypes": [
       {
-        "type": "isom",
+        "name": "isom",
         "signature": {
           "value": "6674797069736f6d",
           "offset": 8
         }
       },
       {
-        "type": "msnv",
+        "name": "msnv",
         "signature": {
           "value": "667479704d534e56",
           "offset": 8
         }
       },
       {
-        "type": "mmp4",
+        "name": "mmp4",
         "signature": {
           "value": "667479706d6d7034",
           "offset": 8
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "name": "OGG",
+    "name": "OGG Audio",
     "extension": "ogg",
     "mime": "audio/ogg",
     "signature": {
@@ -265,7 +265,7 @@
     }
   },
   {
-    "name": "Portable Document Format",
+    "name": "PDF File",
     "extension": "pdf",
     "mime": "application/pdf",
     "signature": {
@@ -274,7 +274,7 @@
     }
   },
   {
-    "name": "Portable Network Graphics",
+    "name": "PNG Image",
     "extension": "png",
     "mime": "image/png",
     "signature": {
@@ -283,7 +283,7 @@
     }
   },
   {
-    "name": "PhotoShop Document",
+    "name": "PSD Image",
     "extension": "psd",
     "mime": "image/psd",
     "signature": {
@@ -292,7 +292,7 @@
     }
   },
   {
-    "name": "Rich Text Format",
+    "name": "RTF Document",
     "extension": "rtf",
     "mime": "application/rtf",
     "signature": {
@@ -301,19 +301,19 @@
     }
   },
   {
-    "name": "Tagged Image File Format",
+    "name": "TIFF Image",
     "extension": "tif",
     "mime": "image/tiff",
     "subtypes": [
       {
-        "type": "little endian",
+        "name": "little endian",
         "signature": {
           "value": "49492a00",
           "offset": 0
         }
       },
       {
-        "type": "big endian",
+        "name": "big endian",
         "signature": {
           "value": "4d4d002a",
           "offset": 0
@@ -322,7 +322,7 @@
     ]
   },
   {
-    "name": "Waveform Audio File Format",
+    "name": "WAV Audio",
     "extension": "wav",
     "mime": "audio/wav",
     "signature": {
@@ -331,7 +331,7 @@
     }
   },
   {
-    "name": "WebM",
+    "name": "WebM Video",
     "extension": "webm",
     "mime": "video/webm",
     "signature": {
@@ -340,7 +340,7 @@
     }
   },
   {
-    "name": "WebP",
+    "name": "WebP Image",
     "extension": "webp",
     "mime": "image/webp",
     "signature": [
@@ -355,7 +355,7 @@
     ]
   },
   {
-    "name": "XZ",
+    "name": "XZ Archive",
     "extension": "xz",
     "mime": "application/x-xz",
     "signature": [
@@ -366,26 +366,26 @@
     ]
   },
   {
-    "name": "ZIP",
+    "name": "ZIP Archive",
     "extension": "zip",
     "mime": "application/zip",
     "subtypes": [
       {
-        "type": "standard",
+        "name": "standard",
         "signature": {
           "value": "504b0304",
           "offset": 0
         }
       },
       {
-        "type": "empty",
+        "name": "empty",
         "signature": {
           "value": "504b0506",
           "offset": 0
         }
       },
       {
-        "type": "spanning",
+        "name": "spanning",
         "signature": {
           "value": "504b0708",
           "offset": 0

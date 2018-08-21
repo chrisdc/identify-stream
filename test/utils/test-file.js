@@ -17,7 +17,10 @@ function testFile(path, expected, options, cb) {
   const writableStreamBuffer = new WritableStreamBuffer();
 
   identifyStream.on('complete', (type) => {
-    expect(type).to.equal(expected);
+    //expect(Object.keys(type).length).to.equal(Object.keys(expected).length);
+    for (var key in expected) {
+      expect(type[key]).to.equal(expected[key]);
+    }
     cb();
   });
 
