@@ -6,7 +6,9 @@
 $ npm install --save indentify-stream
 ```
 
-## Usage
+## Examples
+
+## Basic Usage
 
 ```js
 const identifyStream = new IdentifyStream();
@@ -15,57 +17,125 @@ const outputStream = fs.createWriteStream('./output.png');
 
 inputStream.pipe(identifyStream).pipe(outputStream);
 
-identifyStream.on('identity', (mimeType) => {
-  console.log(mimeType); // 'image/png'
+identifyStream.on('complete', (result) => {
+  console.log(result); // {extension: "png", mime: "image/png"}
 });
 ```
 
-### Usage With Custom Formats
+## Detecting Subtypes
+
+Some file formats have more than one possible file signature. Where this is the case a `subtype` property will be returned as part of the result.
+
+```js
+const identifyStream = new IdentifyStream();
+const inputStream = fs.createReadStream('./input.gif');
+const outputStream = fs.createWriteStream('./output.gig');
+
+inputStream.pipe(identifyStream).pipe(outputStream);
+
+identifyStream.on('complete', (mimeType) => {
+  console.log(result); // {extension: "gif", mime: "image/gif", subtype: "87a"}
+});
+```
+
+## Detecting Custom Formats
+
+```js
+const identifyStream = new IdentifyStream({
+  extension: 'pseudo',
+  mime: 'application/x-custom',
+  signature: [{
+    value: '7fa92c',
+    offset: 0
+  }]
+});
+const inputStream = fs.createReadStream('./input.gif');
+const outputStream = fs.createWriteStream('./output.gig');
+
+inputStream.pipe(identifyStream).pipe(outputStream);
+
+identifyStream.on('complete', (mimeType) => {
+  console.log(result); // {extension: "gif", mime: "image/gif", subtype: "87a"}
+});
+```
 
 ## API
 
-new IdentityStream([option])
+### new IdentityStream([options])
 
 * `options` <Object>
-  * `customFormats` <Object> | <Object[]> Define any additional file formats you would like to search for.
-    * `extension` <string> The file formats's extension
-    * `mime` <string> The file formats's MIME type.
-    * `signature` <Object> | <Object[]> The file format's signature. If an array of objects are provided each signature will have to match.
-      * `value` <string> The signature to check for.
-      * `offset` <number> The offset of the signatue.
-    * `subtypes` <Object> | <Object[]> Define different types of the format.
-  * `highWaterMark` <number> Default: `16384`
+  - `customFormats` {Format | <Format[]} An optional list of custom file formats to detect [(See below)](#defining-custom-formats).
+
+  - `highWaterMark` {Number} The node streams `highWaterMark` setting. Default: `16384`
+
+## Events
+
+### complete
+
+The `complete` event is emitted when the stream has succesfully identified the stream file format, or ruled out all known file formats. Callback functions attached to this event receive the MIME type of the streamed file, or `null` if the format is not recognized.
+
+### error
+
+The `error` event is emitted when the stream encounters an unexpected situation, for example if it is connected to an object stream.
+
+## Defining Custom Formats
+
+Instances of IdentifyStream may be configured to detect file formats beyond those already supported. To do so, use the customFormats option to provide one or more `Format` objects. See /data/formats.json for examples.
+
+### Format
+
+Property    | Type                               | Description
+------------|------------------------------------|-------------
+`extension` | String                             | The file formats's extension
+`mime`      | String                             | The file formats's MIME type.
+`signature` | Signature&nbsp;\|&nbsp;Signature[] | One or more `Signature` objects. Identity-Stream will only match with this format if all signatures are present in the stream.
+`subtypes`  | Subtype&nbsp;\|&nbsp;Subtype[]     | One or more `Subtype` objects.
+
+### SubType
+
+Property    | Type                               | Description
+------------|------------------------------------|-------------
+`type`      | String                             | The name of this subtype
+`signature` | Signature&nbsp;\|&nbsp;Signature[] | One or more `Signature` objects. Identity-Stream will only match with this subtype if all signatures are present in the stream.
+
+### Signature
+
+| Property | Type   | Description |
+|----------|--------|-------------|
+| `value`  | String | The signature to check for (in hex format).
+| `offset` | Number | The offset of the signatue in bytes.
 
 ## Supported File Types
 
-* 7z
-* avi
-* bmp
-* bz2
-* exe
-* flac
-* gif
-* gz
-* ico
-* jpg
-* jpf
-* m4a
-* mp4
-* mov
-* mp3
-* mp4
-* ogg
-* pdf
-* png
-* psd
-* rtf
-* tiff
-* wav
-* webm
-* webp
-* xz
-* zip
+Extension | MIME type
+----------|----------------------------
+7z        | application/x-7z-compressed
+avi       | video/avi
+bmp       | image/bmp
+bz2       | application/bzip2
+exe       | application/octet-stream
+flac      | audio/flac
+gif       | image/gif
+gz        | application/gzip
+ico       | image/ico
+jpg       | image/jpeg
+jpf       | image/jpx
+m4a       | audio/m4a
+mov       | video/quicktime
+mp3       | audio/mpeg
+mp4       | video/mp4
+ogg       | audio/ogg
+pdf       | application/pdf
+png       | image/png
+psd       | image/psd
+rtf       | application/rtf
+tiff      | image/tiff
+wav       | audio/wav
+webm      | video/webm
+webp      | image/webp
+xz        | application/x-xz
+zip       | application/zip
 
-## License
+## License
 
 ISC
