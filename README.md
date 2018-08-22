@@ -85,15 +85,15 @@ Property    | Type                               | Description
 ------------|------------------------------------|------------
 `extension` | String                             | The file formats's extension
 `mime`      | String                             | The file formats's MIME type.
-`signature` | Signature&nbsp;\|&nbsp;Signature[] | One or more `Signature` objects. Identity-Stream will only match with this format if all signatures are present in the stream.
-`subtypes`  | Subtype&nbsp;\|&nbsp;Subtype[]     | One or more `Subtype` objects.
+`signature` | Signature&nbsp;⎮&nbsp;Signature[]  | One or more `Signature` objects. Identity-Stream will only match with this format if all signatures are present in the stream.
+`subtypes`  | Subtype&nbsp;⎮&nbsp;Subtype[]      | One or more `Subtype` objects.
 
 ### SubType
 
 Property    | Type                               | Description
 ------------|------------------------------------|------------
 `type`      | String                             | The name of this subtype
-`signature` | Signature&nbsp;\|&nbsp;Signature[] | One or more `Signature` objects. Identity-Stream will only match with this subtype if all signatures are present in the stream.
+`signature` | Signature&nbsp;⎮&nbsp;Signature[]  | One or more `Signature` objects. Identity-Stream will only match with this subtype if all signatures are present in the stream.
 
 ### Signature
 
