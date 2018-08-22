@@ -90,7 +90,7 @@ describe('IdentifyStream', () => {
       testFile('./test/fixtures/fixture.7z', {
         name: '7-zip Archive',
         extension: '7z',
-        mime: 'application/x-7z-compressed',
+        mime: 'application/x-7z-compressed'
       }, done);
     });
 
@@ -232,7 +232,7 @@ describe('IdentifyStream', () => {
       testFile('./test/fixtures/fixture.mp4', {
         name: 'MP4 Video',
         extension: 'mp4',
-        mime: 'video/mp4',
+        mime: 'video/mp4'
       }, done);
     });
 
@@ -240,7 +240,7 @@ describe('IdentifyStream', () => {
       testFile('./test/fixtures/fixture.ogg', {
         name: 'OGG Audio',
         extension: 'ogg',
-        mime: 'audio/ogg',
+        mime: 'audio/ogg'
       }, done);
     });
 
@@ -248,7 +248,7 @@ describe('IdentifyStream', () => {
       testFile('./test/fixtures/fixture.pdf', {
         name: 'PDF File',
         extension: 'pdf',
-        mime: 'application/pdf',
+        mime: 'application/pdf'
       }, done);
     });
 
@@ -256,7 +256,7 @@ describe('IdentifyStream', () => {
       testFile('./test/fixtures/fixture.png', {
         name: 'PNG Image',
         extension: 'png',
-        mime: 'image/png',
+        mime: 'image/png'
       }, done);
     });
 
@@ -264,7 +264,7 @@ describe('IdentifyStream', () => {
       testFile('./test/fixtures/fixture.psd', {
         name: 'PSD Image',
         extension: 'psd',
-        mime: 'image/psd',
+        mime: 'image/psd'
       }, done);
     });
 
@@ -272,7 +272,7 @@ describe('IdentifyStream', () => {
       testFile('./test/fixtures/fixture.rtf', {
         name: 'RTF Document',
         extension: 'rtf',
-        mime: 'application/rtf',
+        mime: 'application/rtf'
       }, done);
     });
 
@@ -298,7 +298,7 @@ describe('IdentifyStream', () => {
       testFile('./test/fixtures/fixture.wav', {
         name: 'WAV Audio',
         extension: 'wav',
-        mime: 'audio/wav',
+        mime: 'audio/wav'
       }, done);
     });
 
@@ -306,7 +306,7 @@ describe('IdentifyStream', () => {
       testFile('./test/fixtures/fixture.webm', {
         name: 'WebM Video',
         extension: 'webm',
-        mime: 'video/webm',
+        mime: 'video/webm'
       }, done);
     });
 
@@ -314,7 +314,7 @@ describe('IdentifyStream', () => {
       testFile('./test/fixtures/fixture.webp', {
         name: 'WebP Image',
         extension: 'webp',
-        mime: 'image/webp',
+        mime: 'image/webp'
       }, done);
     });
 
@@ -322,7 +322,7 @@ describe('IdentifyStream', () => {
       testFile('./test/fixtures/fixture.xz', {
         name: 'XZ Archive',
         extension: 'xz',
-        mime: 'application/x-xz',
+        mime: 'application/x-xz'
       }, done);
     });
 
@@ -360,11 +360,13 @@ describe('IdentifyStream', () => {
 
   describe('Custom file type support', () => {
     it('Should identify a custom format', (done) => {
-      testFile('./test/fixtures/fixture.pseudo', {
+      var expected = {
         name: 'pseudo format',
         extension: 'pseudo',
-        mime: 'application/x-custom',
-      }, {
+        mime: 'application/x-custom'
+      };
+
+      var options = {
         formats: [
           {
             name: 'pseudo format',
@@ -376,15 +378,19 @@ describe('IdentifyStream', () => {
             }]
           }
         ]
-      }, done);
+      };
+
+      testFile('./test/fixtures/fixture.pseudo', expected, options, done);
     });
 
     it('Should identify a custom format from a list.', (done) => {
-      testFile('./test/fixtures/fixture.pseudo', {
+      var expected = {
         name: 'pseudo format2',
         extension: 'pseudo2',
-        mime: 'application/x-custom2',
-      }, {
+        mime: 'application/x-custom2'
+      };
+
+      var options = {
         formats: [
           {
             name: 'pseudo format',
@@ -405,15 +411,19 @@ describe('IdentifyStream', () => {
             }]
           }
         ]
-      }, done);
+      };
+
+      testFile('./test/fixtures/fixture.pseudo', expected, options, done);
     });
 
     it('Should identify a standard format when provided with custom formats.', (done) => {
-      testFile('./test/fixtures/fixture.7z', {
+      var expected = {
         name: '7-zip Archive',
         extension: '7z',
-        mime: 'application/x-7z-compressed',
-      }, {
+        mime: 'application/x-7z-compressed'
+      };
+
+      var options  = {
         formats: [
           {
             name: 'pseudo format',
@@ -425,15 +435,19 @@ describe('IdentifyStream', () => {
             }]
           }
         ]
-      }, done);
+      };
+
+      testFile('./test/fixtures/fixture.7z', expected, options, done);
     });
 
     it('Should identify a custom format with a signature outside the usual area.', (done) => {
-      testFile('./test/fixtures/fixture.pseudo', {
+      var expected = {
         name: 'pseudo format',
         extension: 'pseudo',
-        mime: 'application/x-custom',
-      }, {
+        mime: 'application/x-custom'
+      };
+
+      var options = {
         formats: [
           {
             name: 'pseudo format',
@@ -445,16 +459,20 @@ describe('IdentifyStream', () => {
             }]
           }
         ]
-      }, done);
+      };
+
+      testFile('./test/fixtures/fixture.pseudo', expected, options, done);
     });
 
     it('Should identify a custom format with subtypes', (done) => {
-      testFile('./test/fixtures/fixture.pseudo', {
+      var expected = {
         name: 'pseudo format',
         extension: 'pseudo',
         mime: 'application/x-custom',
         subtype: 'subtype b'
-      }, {
+      };
+
+      var options = {
         formats: [
           {
             name: 'pseudo format',
@@ -479,15 +497,19 @@ describe('IdentifyStream', () => {
             ]
           }
         ]
-      }, done);
+      };
+
+      testFile('./test/fixtures/fixture.pseudo', expected, options, done);
     });
 
     it('Should allow custom signatures outside of an array', (done) => {
-      testFile('./test/fixtures/fixture.pseudo', {
+      var expected = {
         name: 'pseudo format',
         extension: 'pseudo',
         mime: 'application/x-custom'
-      }, {
+      };
+
+      var options = {
         formats: [
           {
             name: 'pseudo format',
@@ -499,15 +521,19 @@ describe('IdentifyStream', () => {
             }
           }
         ]
-      }, done);
+      };
+
+      testFile('./test/fixtures/fixture.pseudo', expected, options, done);
     });
 
     it('Should allow custom formats outside of an array', (done) => {
-      testFile('./test/fixtures/fixture.pseudo', {
+      var expected = {
         name: 'pseudo format',
         extension: 'pseudo',
         mime: 'application/x-custom'
-      }, {
+      };
+
+      var options = {
         formats: {
           name: 'pseudo format',
           extension: 'pseudo',
@@ -517,7 +543,9 @@ describe('IdentifyStream', () => {
             offset: 131104
           }]
         }
-      }, done);
+      };
+
+      testFile('./test/fixtures/fixture.pseudo', expected, options, done);
     });
   });
 });
