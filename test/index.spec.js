@@ -353,8 +353,8 @@ describe('IdentifyStream', () => {
       }, done);
     });
 
-    it('Returns \'unknown\' when no signatures match', (done) => {
-      testFile('./test/fixtures/fixture.pseudo', 'unknown', done);
+    it('Returns null when no signatures match', (done) => {
+      testFile('./test/fixtures/fixture.pseudo', null, done);
     });
   });
 
@@ -431,7 +431,7 @@ describe('IdentifyStream', () => {
             mime: 'application/x-custom',
             signature: [{
               value: '7fa92c',
-              offset: 131104
+              offset: 65552
             }]
           }
         ]
@@ -455,7 +455,7 @@ describe('IdentifyStream', () => {
             mime: 'application/x-custom',
             signature: [{
               value: '7fa92c',
-              offset: 131104
+              offset: 65552
             }]
           }
         ]
@@ -483,7 +483,7 @@ describe('IdentifyStream', () => {
                 name: 'subtype a',
                 signature: {
                   value: '7fa93c',
-                  offset: 131104
+                  offset: 65552
                 }
               },
               {
@@ -491,7 +491,7 @@ describe('IdentifyStream', () => {
                 value: '7fa92c',
                 signature: {
                   value: '7fa92c',
-                  offset: 131104
+                  offset: 65552
                 }
               }
             ]
@@ -517,7 +517,7 @@ describe('IdentifyStream', () => {
             mime: 'application/x-custom',
             signature: {
               value: '7fa92c',
-              offset: 131104
+              offset: 65552
             }
           }
         ]
@@ -540,7 +540,7 @@ describe('IdentifyStream', () => {
           mime: 'application/x-custom',
           signature: [{
             value: '7fa92c',
-            offset: 131104
+            offset: 65552
           }]
         }
       };

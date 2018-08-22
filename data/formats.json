@@ -19,7 +19,7 @@
       },
       {
         "value": "41564920",
-        "offset": 16
+        "offset": 8
       }
     ]
   },
@@ -146,7 +146,7 @@
     "signature": [
       {
         "value": "667479704d3441",
-        "offset": 8
+        "offset": 4
       }
     ]
   },
@@ -159,49 +159,49 @@
         "name": "moov",
         "signature": {
           "value": "6d6f6f76",
-          "offset": 8
+          "offset": 4
         }
       },
       {
         "name": "free",
         "signature": {
           "value": "66726565",
-          "offset": 8
+          "offset": 4
         }
       },
       {
         "name": "ftypqt",
         "signature": {
           "value": "6674797071742020",
-          "offset": 8
+          "offset": 4
         }
       },
       {
         "name": "mdat",
         "signature": {
           "value": "6d646174",
-          "offset": 8
+          "offset": 4
         }
       },
       {
         "name": "pnot",
         "signature": {
           "value": "706E6F74",
-          "offset": 8
+          "offset": 4
         }
       },
       {
         "name": "skip",
         "signature": {
           "value": "736B6970",
-          "offset": 8
+          "offset": 4
         }
       },
       {
         "name": "wide",
         "signature": {
           "value": "77696465",
-          "offset": 8
+          "offset": 4
         }
       }
     ]
@@ -236,21 +236,21 @@
         "name": "isom",
         "signature": {
           "value": "6674797069736f6d",
-          "offset": 8
+          "offset": 4
         }
       },
       {
         "name": "msnv",
         "signature": {
           "value": "667479704d534e56",
-          "offset": 8
+          "offset": 4
         }
       },
       {
         "name": "mmp4",
         "signature": {
           "value": "667479706d6d7034",
-          "offset": 8
+          "offset": 4
         }
       }
     ]
@@ -327,7 +327,7 @@
     "mime": "audio/wav",
     "signature": {
       "value": "57415645666d7420",
-      "offset": 16
+      "offset": 8
     }
   },
   {
@@ -350,7 +350,7 @@
       },
       {
         "value": "57454250",
-        "offset": 16
+        "offset": 8
       }
     ]
   },

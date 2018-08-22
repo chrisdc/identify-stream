@@ -54,7 +54,7 @@ describe('lookup', () => {
       mime: 'application/x-custom',
       signature: {
         value: '1bdd0aaa',
-        offset: 64
+        offset: 32
       }
     };
 
@@ -69,16 +69,16 @@ describe('lookup', () => {
     expect(result).to.deep.equal(expected);
   });
 
-  it('Should return \'unknown\' when no matches are found', () => {
+  it('Should return null when no matches are found', () => {
     expect(
       lookup(signatures['application/x-custom'], {
         extension: 'pseudo',
         mime: 'application/x-custom',
         signature: {
           value: '5fddhfgh',
-          offset: 64
+          offset: 32
         }
       })
-    ).to.equal('unknown');
+    ).to.be.null;
   });
 });

@@ -29,7 +29,7 @@ describe('findSampleLength', () => {
       mime: 'application/x-custom',
       signature: {
         value: '7fa92c',
-        offset: 131104
+        offset: 65552
       }
     });
 
@@ -43,11 +43,11 @@ describe('findSampleLength', () => {
       signature: [
         {
           value: 'aabbcc',
-          offset: 500
+          offset: 250
         },
         {
           value: 'ddeeff',
-          offset: 520
+          offset: 260
         }
       ]
     });
@@ -64,14 +64,14 @@ describe('findSampleLength', () => {
           name: 'Type A',
           signature: {
             value: '474946383761',
-            offset: 500
+            offset: 250
           }
         },
         {
           name: 'Type B',
           signature: {
             value: '474946383961',
-            offset: 200
+            offset: 100
           }
         }
       ]
@@ -101,7 +101,7 @@ describe('findSampleLength', () => {
             },
             {
               value: '474946383961',
-              offset: 600
+              offset: 300
             }
           ]
         }
@@ -127,11 +127,11 @@ describe('findSampleLength', () => {
         signature: [
           {
             value: 'aabbcc',
-            offset: 500
+            offset: 250
           },
           {
             value: 'ddeeff',
-            offset: 520
+            offset: 260
           }
         ]
       },
@@ -143,14 +143,14 @@ describe('findSampleLength', () => {
             name: 'Type A',
             signature: {
               value: '474946383761',
-              offset: 500
+              offset: 250
             }
           },
           {
             name: 'Type B',
             signature: {
               value: '474946383961',
-              offset: 200
+              offset: 100
             }
           }
         ]
@@ -175,7 +175,7 @@ describe('findSampleLength', () => {
               },
               {
                 value: '474946383961',
-                offset: 600
+                offset: 300
               }
             ]
           }

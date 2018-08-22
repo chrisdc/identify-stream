@@ -17,7 +17,11 @@ function testFile(path, expected, options, cb) {
   const writableStreamBuffer = new WritableStreamBuffer();
 
   identifyStream.on('complete', (result) => {
-    expect(result).to.deep.include(expected);
+    if (!expected) {
+      expect(result).to.be.null;
+    } else {
+      expect(result).to.deep.include(expected);
+    }
     cb();
   });
 
