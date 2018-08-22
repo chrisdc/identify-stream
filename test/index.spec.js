@@ -230,7 +230,7 @@ describe('IdentifyStream', () => {
 
     it('Can identify mp4 file.', (done) => {
       testFile('./test/fixtures/fixture.mp4', {
-        name: 'MP4 Video',
+        name: 'MP4 Media File',
         extension: 'mp4',
         mime: 'video/mp4'
       }, done);

@@ -228,10 +228,24 @@
     ]
   },
   {
-    "name": "MP4 Video",
+    "name": "MP4 Media File",
     "extension": "mp4",
     "mime": "video/mp4",
     "subtypes": [
+      {
+        "name": "avc1",
+        "signature": {
+          "value": "6674797061766331",
+          "offset": 4
+        }
+      },
+      {
+        "name": "iso2",
+        "signature": {
+          "value": "6674797069736f32",
+          "offset": 4
+        }
+      },
       {
         "name": "isom",
         "signature": {
@@ -240,16 +254,114 @@
         }
       },
       {
-        "name": "msnv",
+        "name": "mmp4",
         "signature": {
-          "value": "667479704d534e56",
+          "value": "667479706d6d7034",
           "offset": 4
         }
       },
       {
-        "name": "mmp4",
+        "name": "mp41",
         "signature": {
-          "value": "667479706d6d7034",
+          "value": "667479706d703431",
+          "offset": 4
+        }
+      },
+      {
+        "name": "mp42",
+        "signature": {
+          "value": "667479706d703432",
+          "offset": 4
+        }
+      },
+      {
+        "name": "mp71",
+        "signature": {
+          "value": "667479706d703731",
+          "offset": 4
+        }
+      },
+      {
+        "name": "msnv",
+        "signature": {
+          "value": "667479706d736e76",
+          "offset": 4
+        }
+      },
+      {
+        "name": "ndas",
+        "signature": {
+          "value": "667479706e646173",
+          "offset": 4
+        }
+      },
+      {
+        "name": "ndsc",
+        "signature": {
+          "value": "667479706e647363",
+          "offset": 4
+        }
+      },
+      {
+        "name": "ndsh",
+        "signature": {
+          "value": "667479706e647368",
+          "offset": 4
+        }
+      },
+      {
+        "name": "ndsm",
+        "signature": {
+          "value": "667479706e64736d",
+          "offset": 4
+        }
+      },
+      {
+        "name": "ndsp",
+        "signature": {
+          "value": "667479706e647370",
+          "offset": 4
+        }
+      },
+      {
+        "name": "ndss",
+        "signature": {
+          "value": "667479706e647373",
+          "offset": 4
+        }
+      },
+      {
+        "name": "ndxc",
+        "signature": {
+          "value": "667479706e647863",
+          "offset": 4
+        }
+      },
+      {
+        "name": "ndxh",
+        "signature": {
+          "value": "667479706e647868",
+          "offset": 4
+        }
+      },
+      {
+        "name": "ndxm",
+        "signature": {
+          "value": "667479706e64786d",
+          "offset": 4
+        }
+      },
+      {
+        "name": "ndxp",
+        "signature": {
+          "value": "667479706e647870",
+          "offset": 4
+        }
+      },
+      {
+        "name": "ndxs",
+        "signature": {
+          "value": "667479706e647873",
           "offset": 4
         }
       }
