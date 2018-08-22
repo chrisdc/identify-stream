@@ -12,4 +12,5 @@ cache:
 script:
 - npm run lint
 - npm run test
+- nyc npm test && nyc report --reporter=text-lcov | coveralls
 - npm audit
