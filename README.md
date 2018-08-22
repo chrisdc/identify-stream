@@ -8,9 +8,9 @@ Indentify the contents of a Node stream based on the presence of a file signatur
 $ npm install --save indentify-stream
 ```
 
-## Examples
-
 ## Basic Usage
+
+
 
 ```js
 const identifyStream = new IdentifyStream();
@@ -42,7 +42,7 @@ identifyStream.on('complete', (result) => {
 
 ## Detecting Custom Formats
 
-Instances of IdentifyStream may be extended to detect additional file formats. See (Defining Custom Formats)[#defining-custom-formats] for more information.
+Instances of IdentifyStream may be extended to detect additional file formats. See [Defining Custom Formats](#defining-custom-formats) for more information.
 
 ```js
 const identifyStream = new IdentifyStream({
@@ -81,18 +81,20 @@ Instances of IdentifyStream may be configured to detect file formats beyond thos
 
 ### Format
 
+Each `Format` object should have either a `signature` or a `subtypes` property.
+
 Property    | Type                               | Description
 ------------|------------------------------------|------------
 `extension` | String                             | The file formats's extension
 `mime`      | String                             | The file formats's MIME type.
 `signature` | Signature&nbsp;⎮&nbsp;Signature[]  | One or more `Signature` objects. Identity-Stream will only match with this format if all signatures are present in the stream.
-`subtypes`  | Subtype&nbsp;⎮&nbsp;Subtype[]      | One or more `Subtype` objects.
+`subtypes`  | Subtype&nbsp;⎮&nbsp;Subtype[]      | One or more `Subtype` objects. Identity-Stream will match with this format if any subtype's signature matches.
 
 ### SubType
 
 Property    | Type                               | Description
 ------------|------------------------------------|------------
-`type`      | String                             | The name of this subtype
+`name`      | String                             | The name of this subtype
 `signature` | Signature&nbsp;⎮&nbsp;Signature[]  | One or more `Signature` objects. Identity-Stream will only match with this subtype if all signatures are present in the stream.
 
 ### Signature
@@ -106,7 +108,7 @@ Property    | Type                               | Description
 
 ### complete
 
-The `complete` event is emitted when the stream has succesfully identified the stream file format, or ruled out all known file formats. Callback functions attached to this event receive the MIME type of the streamed file, or `null` if the format is not recognized.
+The `complete` event is emitted when the stream has succesfully identified the stream file format, or ruled out all known file formats. Callback functions attached to this event receive an object describing streamed file, or `null` if the format is not recognized.
 
 ### error
 
