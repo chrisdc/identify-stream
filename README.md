@@ -1,5 +1,7 @@
 # identify-stream
 
+Indentify the contents of a Node stream based on the presence of a file signature (magic number). Can be extended to check for additional file formats.
+
 ## Install
 
 ```
@@ -18,13 +20,13 @@ const outputStream = fs.createWriteStream('./output.png');
 inputStream.pipe(identifyStream).pipe(outputStream);
 
 identifyStream.on('complete', (result) => {
-  console.log(result); // {extension: "png", mime: "image/png"}
+  console.log(result); // {name: "PNG Image", extension: "png", mime: "image/png"}
 });
 ```
 
 ## Detecting Subtypes
 
-Some file formats have more than one possible file signature. Where this is the case a `subtype` property will be returned as part of the result.
+Some file formats have two or more different variants, each with their own distinct file signature. Where this is the case the result object will feature an additional `subtype` property as seen below:
 
 ```js
 const identifyStream = new IdentifyStream();
@@ -33,29 +35,34 @@ const outputStream = fs.createWriteStream('./output.gig');
 
 inputStream.pipe(identifyStream).pipe(outputStream);
 
-identifyStream.on('complete', (mimeType) => {
-  console.log(result); // {name: "PNG Image", extension: "gif", mime: "image/gif", subtype: "87a"}
+identifyStream.on('complete', (result) => {
+  console.log(result); // {name: "GIF Image", extension: "gif", mime: "image/gif", subtype: "87a"}
 });
 ```
 
 ## Detecting Custom Formats
 
+Instances of IdentifyStream may be extended to detect additional file formats. See (Defining Custom Formats)[#defining-custom-formats] for more information.
+
 ```js
 const identifyStream = new IdentifyStream({
-  extension: 'pseudo',
-  mime: 'application/x-custom',
-  signature: [{
-    value: '7fa92c',
-    offset: 0
-  }]
+  formats: {
+    extension: 'pseudo format',
+    extension: 'pseudo',
+    mime: 'application/x-custom',
+    signature: [{
+      value: '7fa92c',
+      offset: 0
+    }];
+  }
 });
-const inputStream = fs.createReadStream('./input.gif');
-const outputStream = fs.createWriteStream('./output.gig');
+const inputStream = fs.createReadStream('./input.pseudo');
+const outputStream = fs.createWriteStream('./output.pseudo');
 
 inputStream.pipe(identifyStream).pipe(outputStream);
 
-identifyStream.on('complete', (mimeType) => {
-  console.log(result); // {name: "GIF Image", extension: "gif", mime: "image/gif", subtype: "87a"}
+identifyStream.on('complete', (result) => {
+  console.log(result); // {name: "pseudo format", extension: "pseudo", mime: "application/x-custom"}
 });
 ```
 
@@ -64,9 +71,36 @@ identifyStream.on('complete', (mimeType) => {
 ### new IdentityStream([options])
 
 * `options` <Object>
-  - `customFormats` {Format | <Format[]} An optional list of custom file formats to detect [(See below)](#defining-custom-formats).
+  - `formats` {Format | <Format[]} An optional list of custom file formats to detect [(See below)](#defining-custom-formats).
 
   - `highWaterMark` {Number} The node streams `highWaterMark` setting. Default: `16384`
+
+## Defining Custom Formats
+
+Instances of IdentifyStream may be configured to detect file formats beyond those already supported. To do so, use the formats option to provide one or more `Format` objects. See /data/formats.json for examples.
+
+### Format
+
+Property    | Type                               | Description
+------------|------------------------------------|------------
+`extension` | String                             | The file formats's extension
+`mime`      | String                             | The file formats's MIME type.
+`signature` | Signature&nbsp;\|&nbsp;Signature[] | One or more `Signature` objects. Identity-Stream will only match with this format if all signatures are present in the stream.
+`subtypes`  | Subtype&nbsp;\|&nbsp;Subtype[]     | One or more `Subtype` objects.
+
+### SubType
+
+Property    | Type                               | Description
+------------|------------------------------------|------------
+`type`      | String                             | The name of this subtype
+`signature` | Signature&nbsp;\|&nbsp;Signature[] | One or more `Signature` objects. Identity-Stream will only match with this subtype if all signatures are present in the stream.
+
+### Signature
+
+| Property | Type   | Description
+|----------|--------|------------
+| `value`  | String | The signature to check for (in hex format).
+| `offset` | Number | The offset of the signatue in bytes.
 
 ## Events
 
@@ -77,33 +111,6 @@ The `complete` event is emitted when the stream has succesfully identified the s
 ### error
 
 The `error` event is emitted when the stream encounters an unexpected situation, for example if it is connected to an object stream.
-
-## Defining Custom Formats
-
-Instances of IdentifyStream may be configured to detect file formats beyond those already supported. To do so, use the customFormats option to provide one or more `Format` objects. See /data/formats.json for examples.
-
-### Format
-
-Property    | Type                               | Description
-------------|------------------------------------|-------------
-`extension` | String                             | The file formats's extension
-`mime`      | String                             | The file formats's MIME type.
-`signature` | Signature&nbsp;\|&nbsp;Signature[] | One or more `Signature` objects. Identity-Stream will only match with this format if all signatures are present in the stream.
-`subtypes`  | Subtype&nbsp;\|&nbsp;Subtype[]     | One or more `Subtype` objects.
-
-### SubType
-
-Property    | Type                               | Description
-------------|------------------------------------|-------------
-`type`      | String                             | The name of this subtype
-`signature` | Signature&nbsp;\|&nbsp;Signature[] | One or more `Signature` objects. Identity-Stream will only match with this subtype if all signatures are present in the stream.
-
-### Signature
-
-| Property | Type   | Description |
-|----------|--------|-------------|
-| `value`  | String | The signature to check for (in hex format).
-| `offset` | Number | The offset of the signatue in bytes.
 
 ## Supported File Types
 
