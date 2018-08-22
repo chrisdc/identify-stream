@@ -8,14 +8,10 @@ cache:
     - node_modules/
 
 lint:
-  except:
-    - schedules
   script:
     - npm run lint
 
 test:
-  except:
-    - schedules
   script:
     - npm run test
 
