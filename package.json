@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com:chrisdc/identify-stream.git"
+    "url": "https://github.com/chrisdc/identify-stream.git"
   },
   "keywords": [
     "identify",
@@ -24,9 +24,9 @@
   "author": "Christopher Crouch",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/chrisdc/identify-stream/issues"
+    "url": "https://github.com/chrisdc/identify-stream/issues"
   },
-  "homepage": "https://gitlab.com/chrisdc/identify-stream#README",
+  "homepage": "https://github.com/chrisdc/identify-stream",
   "devDependencies": {
     "chai": "^4.1.2",
     "coveralls": "^3.0.2",
