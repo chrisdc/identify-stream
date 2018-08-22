@@ -15,7 +15,11 @@
     "identify",
     "signature",
     "nodejs",
-    "stream"
+    "stream",
+    "magic",
+    "number",
+    "detect",
+    "type"
   ],
   "author": "Christopher Crouch",
   "license": "ISC",
