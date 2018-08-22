@@ -13,4 +13,3 @@ script:
 - npm run lint
 - npm run test
 - npm audit
-- npm outdated
