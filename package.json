@@ -1,7 +1,7 @@
 {
   "name": "identify-stream",
   "version": "1.0.0",
-  "description": "Indentify the contents of a Node stream based on the presence of a file signature (magic number).",
+  "description": "Indentify the contents of a Node stream based on the presence of a file signature.",
   "main": "/lib/index.js",
   "scripts": {
     "test": "nyc --reporter=text --reporter=text-summary mocha",
