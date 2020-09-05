@@ -3,7 +3,6 @@
 
 const { expect } = require('chai');
 const IdentifyStream = require('../lib/index.js');
-const { Readable } = require('stream');
 const fs = require('fs');
 const { WritableStreamBuffer } = require('stream-buffers');
 const testFile = require('./utils/test-file');
@@ -21,21 +20,6 @@ describe('IdentifyStream', () => {
   });
 
   describe('Streaming', () => {
-    it('Should emit TypeError when reading from an object stream.', () => {
-      const source = new Readable({
-        objectMode: true,
-        read() {}
-      });
-      const identifyStream = new IdentifyStream();
-
-      source.pipe(identifyStream);
-      source.push({ a: 1 });
-
-      identifyStream.on('error', function(err) {
-        expect(err).to.be.an.instanceof(TypeError);
-      });
-    });
-
     it('Should emit an error when file is empty.', (done) => {
       const inputStream = fs.createReadStream('./test/fixtures/fixture.empty');
       const identifyStream = new IdentifyStream();
