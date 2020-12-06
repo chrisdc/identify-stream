@@ -1,6 +1,7 @@
 # 1.0.2
 
 - Fix bug in package.json
+- Fix type in README
 
 # 1.0.1
 
