@@ -8,7 +8,7 @@ Identify the contents of a Node stream based on the presence of a file signature
 ## Install
 
 ```
-$ npm install --save indentify-stream
+$ npm install --save identify-stream
 ```
 
 ## Basic Usage
