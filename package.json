@@ -5,6 +5,7 @@
   "main": "./lib/index.js",
   "scripts": {
     "test": "nyc --reporter=text --reporter=text-summary mocha",
+    "test2": "nyc npm test && nyc report --reporter=lcov",
     "lint": "eslint ."
   },
   "repository": {
