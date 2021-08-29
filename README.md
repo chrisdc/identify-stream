@@ -5,6 +5,8 @@ Identify the contents of a Node stream based on the presence of a file signature
 [![Build Status](https://travis-ci.org/chrisdc/identify-stream.svg?branch=master)](https://travis-ci.org/chrisdc/identify-stream)
 [![Coverage Status](https://coveralls.io/repos/github/chrisdc/identify-stream/badge.svg?branch=master)](https://coveralls.io/github/chrisdc/identify-stream?branch=master)
 
+test
+
 ## Install
 
 ```
