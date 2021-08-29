@@ -2,7 +2,7 @@
 
 Identify the contents of a Node stream based on the presence of a file signature (magic number). Can be extended to check for additional file formats.
 
-[![Build Status](https://travis-ci.org/chrisdc/identify-stream.svg?branch=master)](https://travis-ci.org/chrisdc/identify-stream)
+[![tests](https://github.com/chrisdc/identify-stream/actions/workflows/tests.yml/badge.svg)](https://github.com/chrisdc/identify-stream/actions/workflows/tests.yml)
 [![Coverage Status](https://coveralls.io/repos/github/chrisdc/identify-stream/badge.svg?branch=master)](https://coveralls.io/github/chrisdc/identify-stream?branch=master)
 
 test
