@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [ master ]
 
-name: Test Coveralls
+name: Test Coverage
 
 jobs:
 
