@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 jobs:
   build:
-    name: Build
+    name: Coverage
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -18,7 +18,7 @@ jobs:
     - name: npm install, make test-coverage
       run: |
         npm ci
-        npm run test2
+        npm run test
     - name: Coveralls
       uses: coverallsapp/github-action@master
       with:
