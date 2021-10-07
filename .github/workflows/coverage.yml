@@ -1,24 +1,29 @@
-name: npm audit
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+
+name: Test Coverage
+
 jobs:
+
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
+
     - uses: actions/checkout@v1
+
     - name: Use Node.js 16.x
       uses: actions/setup-node@v1
       with:
         node-version: 16.x
+
     - name: npm install, make test-coverage
       run: |
         npm ci
-        npm run test2
-    - name: Coveralls
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        npm run test
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v2
