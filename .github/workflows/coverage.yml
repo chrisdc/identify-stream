@@ -22,7 +22,7 @@ jobs:
 
     - name: npm install, make test-coverage
       run: |
-        npm install
+        npm ci
         npm run test
 
     - name: Coveralls
